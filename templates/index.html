@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+    .navbar-test h1 {
+        color: #fff;
+        font-size: 40px;
+        align-content: center;
+    }
+
+    body {
+        background-color: grey;
+        ;
+    }
+
+    form {
+        margin-top: 50px;
+        margin: auto;
+        width: 35%;
+        ;
+    }
+
+    .result {
+        margin: auto;
+        width: 35%;
+        border: 1px solid #ccc;
+        background-color: grey;
+        color: #fff;
+
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light bg-dark">
+        <span class="login">
+            <h1 style="text-align:center">Grade Predictor</h1>
+        </span> 
+    </nav>
+
+    <form action="{{ url_for('predict') }}"method="POST">
+            
+        <legend>Input Variables</legend>
+
+        <br>Guardian Other:<br>
+        <input type="text" name="guardian_other" required="required" /><br>
+
+        <br>Family Support No:<br>
+        <input type="text" name="famsup_no" required="required" /><br>
+        
+        <br>Nursery Yes:<br>
+        <input type="text" name="nursery_yes" required="required" /><br>
+        
+        <br>Internet Yes:<br>
+        <input type="text" name="internet_yes" required="required" /><br>
+        
+        <br>Higher Education Yes:<br>
+        <input type="text" name="higher_yes" required="required" /><br>
+        
+        <br>Higher Education No:<br>
+        <input type="text" name="higher_no" required="required" /><br>
+        
+        <br>Internet No:<br>
+        <input type="text" name="internet_no" required="required" /><br>
+        
+        <br>Romantic Yes:<br>
+        <input type="text" name="romantic_yes" required="required" /><br>
+        
+        <br>Romantic No:<br>
+        <input type="text" name="romantic_no" required="required" /><br>
+        
+        <br>Nursery No:<br>
+        <input type="text" name="nursery_no" required="required" /><br>
+        
+        <br>Activities Yes:<br>
+        <input type="text" name="activities_yes" required="required" /><br>
+        
+        <br>Activities No:<br>
+        <input type="text" name="activities_no" required="required" /><br>
+        
+        <br>Paid Classes Yes:<br>
+        <input type="text" name="paid_yes" required="required" /><br>
+        
+        <br>Paid Classes No:<br>
+        <input type="text" name="paid_no" required="required" /><br>
+        
+        <br>Family Support Yes:<br>
+        <input type="text" name="famsup_yes" required="required" /><br>
+        
+        <br>School Support Yes:<br>
+        <input type="text" name="schoolsup_yes" required="required" /><br>
+        
+        <br>School Support No:<br>
+        <input type="text" name="schoolsup_no" required="required" /><br>
+        
+        <br>Free Time:<br>
+        <input type="text" name="freetime" required="required" /><br>
+        
+        <br>Weekend Alcohol Consumption:<br>
+        <input type="text" name="Walc" required="required" /><br>
+
+        <button type="submit" class=""btn btn-primary btn-block btn-large">Predict Your Grade</button></p>
+    </form>
+
+    <br>
+    <br>
+    <h4 style="text-align: center; color: green;">
+        Predicted Grade: {{ prediction_text }}
+    </h4>
+</div>
+
+</body>
+
+</html>
